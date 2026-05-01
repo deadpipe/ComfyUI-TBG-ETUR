@@ -495,13 +495,13 @@ class TBG_Refiner_v1():
                 # if the user build fist time the tile Overrides or its modified parameters could not be updated so we need to take values fro PIPE not from json , this json was though for on node load with infos...
 
                 if len(tbg.OUTPUTS.grid_images_all) == len(obj.get("prompts")):
-                    print(f"Tile Overrides set from JSON {len(tbg.OUTPUTS.grid_images_all)} Tiles and {len(obj.get("prompts"))} Prompts ")
+                    print(f"Tile Overrides set from JSON {len(tbg.OUTPUTS.grid_images_all)} Tiles and {len(obj.get('prompts'))} Prompts ")
                     tbg.PROMPTER.output_denoises = obj.get("denoises") or []
                     tbg.PROMPTER.output_seeds_js = obj.get("seeds") or []
                     tbg.PROMPTER.output_cnet_js = obj.get("cnet_strength") or []
                     tbg.PROMPTER.output_prompts = obj.get("prompts") or []
                 else:
-                    print(f"Skipped json inputs from Tile Overrides Node because {len(tbg.OUTPUTS.grid_images_all)} Tiles have not the same count than {len(obj.get("prompts"))} Prompts, using PIPE ")
+                    print(f"Skipped json inputs from Tile Overrides Node because {len(tbg.OUTPUTS.grid_images_all)} Tiles have not the same count than {len(obj.get('prompts'))} Prompts, using PIPE ")
             except Exception:
                 print(f"Skipped json inputs from Tile Overrides Node")
 
